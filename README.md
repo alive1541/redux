@@ -87,8 +87,11 @@ console.log(store.getState());
 
 ### Middleware
 它提供的是位于 action 被发起之后，到达 reducer 之前的扩展点。
+
 示例： 
 ``````
+import { createStore, applyMiddleware } from 'redux'
+
 const logger = store => next => action => {
   console.group(action.type)
   console.info('dispatching', action)
@@ -98,9 +101,35 @@ const logger = store => next => action => {
   return result
 }
 
+let store = createStore(
+  reducer,
+  // applyMiddleware() 告诉 createStore() 如何处理中间件
+  applyMiddleware(logger)
+)
 
 ``````
 
+### 异步action
+官方推荐使用redux-thunk中间件，社区中也有redux-saga等解决方案。
+
+redux-thunk通过高阶函数传递dispath和getState方法，允许用户在函数内异步调用。也可以通过withExtraArgument方法向函数内注入额外参数。
+
+示例：
+
+``````
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk.withExtraArgument({ api, whatever })),
+);
+
+// later
+function fetchUser(id) {
+  return (dispatch, getState, { api, whatever }) => {
+    // you can use api and something else here
+    // callback, promise or async function
+  };
+}
+``````
 
 
 
