@@ -19,6 +19,10 @@ redux是flux的一种实现，参考https://juejin.im/post/5c9893c56fb9a07107193
 - Redux为不可变数据集
 - Redux有且只有一个Store对象(单仓库)
 
+# 基础用法
+示例：
+https://www.redux.org.cn/docs/basics/ExampleTodoList.html
+
 # 高级用法
 
 ### combineReducers
