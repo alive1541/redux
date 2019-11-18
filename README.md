@@ -131,6 +131,39 @@ function fetchUser(id) {
 }
 ``````
 
+## react-redux
+
+#### Provider组件
+
+``````
+ReactDOM.render(
+  <Provider store={store}>
+    <MyRootComponent />
+  </Provider>,
+  rootEl
+)
+``````
+
+#### connect方法
+
+``````
+import * as actionCreators from './actionCreators'
+
+function mapStateToProps(state) {
+  return { todos: state.todos }
+}
+
+function mergeProps(stateProps, dispatchProps, ownProps) {
+  return Object.assign({}, ownProps, {
+    todos: stateProps.todos[ownProps.userId],
+    addTodo: (text) => dispatchProps.addTodo(ownProps.userId, text)
+  })
+}
+
+export default connect(mapStateToProps, actionCreators, mergeProps)(TodoApp)
+``````
+
+
 
 
 
