@@ -3,6 +3,17 @@ redux概念及其实现
 
 # 目录结构
 
+├── README.md
+├── package.json
+├── public
+└── src
+    ├── components
+    ├── containers
+    ├── index.js
+    ├── react-redux //工具示例代码
+    ├── redux //工具示例代码
+    ├── redux-thunk //工具示例代码
+    └── store
 
 # 概念
 ### 三大原则
