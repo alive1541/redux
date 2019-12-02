@@ -7,13 +7,13 @@ redux概念及其实现
 ├── package.json </br>
 ├── public </br>
 └── src </br>
-    ├── components </br>
-    ├── containers </br>
-    ├── index.js </br>
-    ├── react-redux //工具示例代码 </br>
-    ├── redux //工具示例代码 </br>
-    ├── redux-thunk //工具示例代码 </br>
-    └── store </br>
+    &nbsp;&nbsp;├── components </br>
+    &nbsp;&nbsp;├── containers </br>
+    &nbsp;&nbsp;├── index.js </br>
+    &nbsp;&nbsp;├── react-redux //工具示例代码 </br>
+    &nbsp;&nbsp;├── redux //工具示例代码 </br>
+    &nbsp;&nbsp;├── redux-thunk //工具示例代码 </br>
+    &nbsp;&nbsp;└── store </br>
 
 # 概念
 ### 三大原则
